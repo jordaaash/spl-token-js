@@ -18,10 +18,9 @@
     ],
     "type": "module",
     "sideEffects": false,
-    "main": "lib/index.cjs.js",
-    "module": "lib/index.esm.js",
-    "esnext": "lib/index.js",
-    "types": "lib/index.d.ts",
+    "main": "lib/cjs/index.js",
+    "module": "lib/esm/index.js",
+    "types": "lib/esm/index.d.ts",
     "browser": {
         "./lib/index.cjs.js": "./lib/index.browser.cjs.js",
         "./lib/index.esm.js": "./lib/index.browser.esm.js"
@@ -33,7 +32,7 @@
     ],
     "scripts": {
         "clean": "shx rm -rf lib",
-        "build": "yarn clean && tsc",
+        "build": "yarn clean && tsc -p tsconfig.json && tsc -p tsconfig-cjs.json",
         "watch": "yarn build -w",
         "deploy": "yarn docs && gh-pages --dist docs --dotfiles",
         "example": "node --experimental-specifier-resolution=node --loader ts-node/esm examples/create_mint_and_transfer_tokens.ts",
