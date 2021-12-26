@@ -17,6 +17,7 @@
         "README.md"
     ],
     "sideEffects": false,
+    "type": "module",
     "main": "lib/cjs/index.js",
     "exports": {
         "import": "./lib/esm/index.js",
